@@ -98,40 +98,61 @@
 						<h2 class="">Congruence and Incongruence</h2>
 					</div>
 					<div class="bl-content" id="congruence">
-						<div id="strength" style="height: 300px; float: left"></div>
-						<div id="weakness" style="height: 300px; float: right"></div>
+						<div id="strength" style="height: 400px"></div>
+						<div id="weakness" style="height: 400px"></div>
+						<h2>Congruence</h2>
+						<p>I think most of feedbacks from others match my own analysis to myself or I agree with the description of others’ analysis. Overall, I am a very hard working, easy-going, helpful, smart and creative person, but not good at communication.</p>
+						<h2>Incongruence</h2>
+						<p>Most of incongruences are related to my weakness. For the weakness I pointed out is more inner characteristics, which are not observable to others. For the weakness others pointed out, it is more about my behaviors. Because it is more related to behaviors, so the feedbacks vary among people, since I can have different behaviors to different person. For example, some people think I am talking too much, but others think I am too quiet and do not like to speak or communicate with others. Some weakness pointed by others are based on the knowledge to me few years ago, so there can be gap between the perceptions, since I have been changing a lot. </p>
 					</div>
 					<script type="text/javascript">
-						var sample_data = [
-					{"value": 100, "name": "alpha", "group": "self"},
-					{"value": 70, "name": "beta", "group": "self"},
-					{"value": 40, "name": "gamma", "group": "self"},
-					{"value": 15, "name": "delta", "group": "group 2"},
+					var strength_data = [
+					{"value": 50, "name": "planing", "group": "Self"},
+					{"value": 30, "name": "leadership", "group": "Self"},
+					{"value": 20, "name": "sensibility", "group": "Self"},
+					{"value": 33, "name": "easy-going", "group": "External"},
+					{"value": 12, "name": "help others", "group": "External"},
+					{"value": 33, "name": "hard-working", "group": "External"},
+					{"value": 6, "name": "computer skills", "group": "External"},
+					{"value": 6, "name": "focusing", "group": "External"},
+					{"value": 10, "name": "creative", "group": "External"}
+					]
+
+					var weakness_data = [
+						{"value": 40, "name": "envy", "group": "Self"},
+						{"value": 30, "name": "not focusing", "group": "Self"},
+						{"value": 30, "name": "impatient", "group": "Self"},
+						{"value": 20, "name": "speak too much", "group": "External"},
+						{"value": 60, "name": "not expressive", "group": "External"},
+						{"value": 20, "name": "bad emotion control", "group": "External"},
+
 					]
 					
 					// instantiate d3plus
 					var visualization = d3plus.viz()
 					.container("#strength")     // container DIV to hold the visualization
-					.data(sample_data)     // data to use with the visualization
+					.data(strength_data)     // data to use with the visualization
 					.type("bubbles")       // visualization type
 					.id(["group", "name"]) // nesting keys
 					.depth(1)              // 0-based depth
 					.size("value")         // key name to size bubbles
 					.color("group")        // color by each group
 					.title("Strength")
-					.width($("#congruence").width())
+					.width($("#congruence").width() * 2)
+					.background("#4BBE8E")
 					.draw()                // finally, draw the visualization!
 
 					var visualization = d3plus.viz()
 					.container("#weakness")     // container DIV to hold the visualization
-					.data(sample_data)     // data to use with the visualization
+					.data(weakness_data)     // data to use with the visualization
 					.type("bubbles")       // visualization type
 					.id(["group", "name"]) // nesting keys
 					.depth(1)              // 0-based depth
 					.size("value")         // key name to size bubbles
 					.color("group")        // color by each group
 					.title("Weakness")
-					.width($("#congruence").width())
+					.width($("#congruence").width() * 2)
+					.background("#4BBE8E")
 					.draw()                // finally, draw the visualization!
 
 					</script>
